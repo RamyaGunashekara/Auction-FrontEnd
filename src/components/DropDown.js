@@ -23,22 +23,26 @@ function DropDown() {
 
     return (
         <div>
-        <div className="header">
-            <select
-                disabled={false}
-                value={select}
-                onChange={(e) => setSelected(e.currentTarget.value)}
-            >
-            {products.map((item) => (
-                <option key={item.id} value={item.id}>
-                    {item.productName}
-                </option>
-                
-            ))}
-            </select>
-        </div>
+           
+            <img src="auction.jpg" width= "140px" height= "100px"></img>
+            <div><br></br></div>
+            <div className="header">
+                Product
+                <select
+                    disabled={false}
+                    value={select}
+                    onChange={(e) => setSelected(e.currentTarget.value)}
+                >
+                    {products.map((item) => (
+                        <option key={item.id} value={item.id}>
+                            {item.productName}
+                        </option>
+
+                    ))}
+                </select>
+            </div>
             <Auction
-                url = {select}></Auction>
+                url={select}></Auction>
         </div>
     );
 

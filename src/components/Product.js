@@ -3,13 +3,34 @@ import './Product.css';
 function Product(props) {
     return (
         <div>
-            <div className='product-item'>
-                <div><h2>{props.productName}</h2></div>
-                <div className='product-item__description'>
-                    <h2>{props.shortDescription}</h2>
-                    <div className='product-item__price'>${props.startPrice}</div>
-                </div>
-            </div>
+            <table id="customers">
+                <tbody>
+                    <tr>
+                        <td>Product Name</td>
+                        <td>{props.productName}</td>
+                    </tr>
+                    <tr>
+                        <td>Short Description</td>
+                        <td>{props.shortDescription}</td>
+                    </tr>
+                    <tr>
+                        <td>Detailed Description</td>
+                        <td>{props.detailedDescription}</td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td>{props.category}</td>
+                    </tr>
+                    <tr>
+                        <td>Start Price</td>
+                        <td>${props.startPrice}</td>
+                    </tr>
+                    <tr>
+                        <td>Bid End Date</td>
+                        <td>{props.bidEndDate}</td>
+                    </tr>
+                </tbody>
+         </table>
         </div>
     );
 }

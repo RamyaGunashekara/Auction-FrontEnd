@@ -1,11 +1,12 @@
 .header {
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
   justify-items: stretch;
   align-items: right;
   padding: 0.5rem;
   margin: 1rem 0;
   border-radius: 12px;
+  font-size: 20px;
   background-color: #f2eeee;
 }
 

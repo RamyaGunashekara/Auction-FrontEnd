@@ -8,7 +8,7 @@ function Auction(props) {
     const [bids, setBids] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    async function fetchBids(){
+    async function fetchBids() {
         setIsLoading(true);
         const url = 'http://localhost:5001/api/v1/showBids/' + props.url;
         console.log(url);
@@ -22,15 +22,18 @@ function Auction(props) {
     return (
         <div>
             <div className='header'>
-            <button class="button-1"onClick={fetchBids}>Get</button>
+                <button class="button-1" onClick={fetchBids}>Get</button>
             </div>
-        
             {isLoading && <p>Loading....</p>}
-            {!isLoading && 
+            {!isLoading &&
                 <Product
-                productName={products.productName}
-                shortDescription={products.shortDescription}
-                startPrice={products.startPrice}></Product> }
+                    productName={products.productName}
+                    shortDescription={products.shortDescription}
+                    startPrice={products.startPrice}
+                    detailedDescription={products.detailedDescription}
+                    category={products.category}
+                    bidEndDate={products.bidEndDate}></Product>}
+            <div><br></br></div>
             <table id="customers">
                 <tbody>
                     <tr>
@@ -50,7 +53,7 @@ function Auction(props) {
                         );
                     })}
                 </tbody>
-         </table>
+            </table>
         </div>
     );
 }
