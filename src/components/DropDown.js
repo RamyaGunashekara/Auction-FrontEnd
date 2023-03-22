@@ -24,7 +24,7 @@ function DropDown() {
     return (
         <div>
            
-            <img src="auction.jpg" width= "140px" height= "100px"></img>
+            <img src="auction.jpg" alt='logo' width= "140px" height= "100px"></img>
             <div><br></br></div>
             <div className="header">
                 Product
