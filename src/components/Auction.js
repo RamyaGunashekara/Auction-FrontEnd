@@ -11,7 +11,6 @@ function Auction(props) {
     async function fetchBids() {
         setIsLoading(true);
         const url = 'http://localhost:5001/api/v1/showBids/' + props.url;
-        console.log(url);
         const response = await fetch(url)
         const data = await response.json();
         setProducts(data.product);
@@ -21,34 +20,39 @@ function Auction(props) {
 
     return (
         <div>
-            <div className='header'>
-                <button class="button-1" onClick={fetchBids}>Get</button>
+            <div>
+                <button className="button-1" onClick={fetchBids}>Fetch Details</button>
             </div>
             {isLoading && <p>Loading....</p>}
             {!isLoading &&
-                <Product
+                <Product 
                     productName={products.productName}
                     shortDescription={products.shortDescription}
                     startPrice={products.startPrice}
                     detailedDescription={products.detailedDescription}
                     category={products.category}
                     bidEndDate={products.bidEndDate}></Product>}
-            <div><br></br></div>
+            <div><br></br><br></br><br></br></div>
+            <h2>BIDS</h2>
             <table id="customers">
                 <tbody>
                     <tr>
                         <th>Bid Amount</th>
-                        <th>Name</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Address</th>
                     </tr>
                     {!isLoading && bids.map((bid) => {
                         return (
                             <tr>
                                 <td>${bid.amount}</td>
                                 <td>{bid.firstName}</td>
+                                <td>{bid.lastName}</td>
                                 <td>{bid.email}</td>
                                 <td>{bid.phone}</td>
+                                <td>{bid.address}</td>
                             </tr>
                         );
                     })}

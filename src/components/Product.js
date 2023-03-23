@@ -31,6 +31,7 @@ function Product(props) {
                     </tr>
                 </tbody>
          </table>
+         <br></br>
         </div>
     );
 }
