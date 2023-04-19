@@ -6,7 +6,6 @@ import DropDown from "./components/DropDown";
 import {
   withAuthenticator,
   Button,
-  Heading,
   Image,
   View,
   Card,
